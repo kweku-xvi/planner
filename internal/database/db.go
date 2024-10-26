@@ -22,7 +22,7 @@ func InitDB() {
 		log.Fatal("error connecting to database")
 	}
 
-	err = DB.AutoMigrate(&models.Task{})
+	err = DB.AutoMigrate(&models.Task{}, &models.User{})
 	if err != nil {
 		log.Fatal("error running migrations")
 	}
