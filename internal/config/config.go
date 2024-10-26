@@ -14,6 +14,7 @@ type Config struct {
 	DBUser     string
 	DBPassword string
 	DBName     string
+	JWTSecret  string
 }
 
 var ENV = initConfig()
@@ -31,6 +32,7 @@ func initConfig() Config {
 		DBUser:     getEnv("DB_USER", "postgres"),
 		DBPassword: getEnv("DB_PASSWORD", "mypassword"),
 		DBName:     getEnv("DB_NAME", "somedbname"),
+		JWTSecret:  getEnv("JWT_SECRET", "myjwtsecret"),
 	}
 }
 
